@@ -1,0 +1,688 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/OpenSans-Regular.eot");
+    src: url("../fonts/OpenSans-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/OpenSans-Bold.eot");
+    src: url("../fonts/OpenSans-Bold.woff") format("woff");
+    font-weight: bold;
+}
+
+:root {
+    --theme-blue-color:#2d3f51;
+    --theme-red-color:#c8342d
+}
+
+*{
+    margin: 0;
+    padding:0;
+}
+
+body {
+    font-family: 'Open Sans', serif;
+    counter-reset:process;
+}
+
+ul{
+    padding-left: 0;
+}
+
+p{
+    color: #979797;
+    font-size: 14px;
+    line-height: 1.8rem;
+}
+
+.rounded-sm{
+    border-radius:.2rem!important
+}
+
+.rounded-lg{
+    border-radius:.3rem!important
+}
+
+.rounded-xl{
+    border-radius:.6rem!important
+}
+
+nav.navbar {
+    position:absolute;
+    top:0;
+    width:100%;
+    z-index:1000;
+    padding:12px 24px
+}
+
+nav.navbar.fixed {
+    position:fixed;
+    background:rgba(0,0,0,.8);
+    transition-duration:850ms
+}
+
+.navbar-nav .nav-item {
+    margin-right:15px
+}
+
+.navbar-nav .nav-item.active {
+    border:1px solid #fff;
+    border-radius:4px
+}
+
+.navbar-nav .nav-item .nav-link {
+    text-transform:uppercase;
+    padding:5px;
+    margin:4px 0;
+    color:#fff;
+    font-size:14px
+}
+
+.navbar .social-links li {
+    padding:5px 10px;
+    display:inline-block
+}
+
+.navbar .social-links li a {
+    color:#fff
+}
+
+.navbar-dark .navbar-toggler {
+    border-color:#fff;
+    border-radius:0;
+    margin-right:15px
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background:none;
+    border-top:1px solid #fff;
+    height:1px;
+    display:block;
+    margin:7px 0
+}
+
+#homecarousel .carousel-item img {
+    max-height:100vh;
+    object-fit:cover
+}
+
+#homecarousel .carousel-indicators li {
+    width:12px;
+    height:12px;
+    border-radius:50%
+}
+
+#homecarousel .carousel-caption {
+    top:50%;
+    transform:translateY(-50%)
+}
+
+#homecarousel .carousel-caption h2 {
+    font-size:38px;
+    font-weight:bolder;
+    text-transform:uppercase;
+    letter-spacing:2.5px
+}
+
+#homecarousel .carousel-caption p {
+    margin:25px 0;
+    font-size:16px;
+    color:#fff
+}
+
+#homecarousel .carousel-item::before {
+    content:'';
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,.2);
+    position:absolute;
+    z-index:1
+}
+
+section.intro-cards .single-card {
+    margin-bottom:20px;
+    box-shadow:-2px 2px 18px 4px #ddd;
+    background:#fff
+}
+
+section.intro-cards .single-card img {
+    width:100%;
+    height:100%;
+    object-fit:cover
+}
+
+section.intro-cards .single-card>div:first-child {
+    padding:50px 20px 30px
+}
+
+section.intro-cards .desc-block h3 {
+    color:var(--theme-blue-color);
+    font-size:26px;
+    text-transform:uppercase;
+    margin-bottom:15px
+}
+
+section.intro-cards .desc-block a {
+    width:200px
+}
+
+section.portfolio .isotopes li {
+    font-size:14px;
+    display:inline-block;
+    font-weight:700;
+    color:var(--theme-blue-color);
+    text-transform:uppercase;
+    padding:7px 14px;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:.2s all
+}
+
+section.portfolio .isotopes li:hover {
+    border-color:var(--theme-blue-color);
+    border-radius:5px
+}
+
+section.portfolio .portfolio-items img {
+    max-width:100%;
+    height:auto
+}
+
+section.portfolio .portfolio-items img:first-child {
+    margin-bottom:30px
+}
+
+section.portfolio .portfolio-items img:last-child {
+    width:100%;
+    height:100%;
+    object-fit:cover
+}
+
+section.portfolio a.btn {
+    margin-top:35px
+}
+
+section.process {
+    background:var(--theme-blue-color);
+    color:#fff
+}
+
+section.process .section-heading,section.process p {
+    color:#fff
+}
+
+section.process li {
+    display:inline-block;
+    text-align:center;
+    width:calc(100%/6 - 5px)
+}
+
+section.process li .polygon {
+    height:90px;
+    width:90px;
+    background:#fff;
+    margin:0 auto 20px;
+    clip-path:polygon(30% 0%,70% 0%,100% 30%,100% 70%,70% 100%,30% 100%,0% 70%,0% 30%)
+}
+
+section.process li .polygon:after {
+    counter-increment:process;
+    content:counter(process);
+    display:block;
+    background:var(--theme-blue-color);
+    width:calc(100% - 2px);
+    height:calc(100% - 2px);
+    clip-path:polygon(30% 0%,70% 0%,100% 30%,100% 70%,70% 100%,30% 100%,0% 70%,0% 30%);
+    position:relative;
+    top:-23px;
+    left:1px;
+    padding:30px;
+    font-size:20px;
+    font-weight:700
+}
+
+section.process li .polygon:hover {
+    background:var(--theme-red-color);
+    transition:.15s all
+}
+
+section.process li span {
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase
+}
+
+#reviewsCarousel {
+    max-width:65%;
+    margin:0 auto
+}
+
+#reviewsCarousel .carousel-item {
+    padding:60px 0;
+    text-align:center
+}
+
+#reviewsCarousel .carousel-indicators li {
+    width:15px;
+    height:15px;
+    border-radius:50%
+}
+
+#reviewsCarousel .ratings li {
+    display:inline-block;
+    color:var(--theme-red-color)
+}
+
+section.reviews .name {
+    font-size:14px;
+    font-weight:700;
+    text-transform:uppercase;
+    color:#fff;
+    margin-bottom:15px
+}
+
+section.reviews .client {
+    font-size:11px;
+    color:var(--theme-red-color);
+    text-transform:uppercase;
+    margin:20px 0 0
+}
+
+section.services .service {
+    text-align:center;
+    max-width:350px;
+    padding:30px 20px;
+    margin:20px
+}
+
+section.services .service h4 {
+    font-size:14px;
+    font-weight:700;
+    text-transform:uppercase
+}
+
+section.services .service .artwork {
+    height:120px
+}
+
+section.services .service img {
+    margin-bottom:15px;
+    position:absolute
+}
+
+section.services .service img.icon {
+    z-index:100;
+    margin-left:-24px;
+    margin-top:24px;
+    height:55px;
+    width:50px;
+    object-fit:contain
+}
+
+section.services .service img.normal-border,section.services .service img.hover-border {
+    margin-left:-50px;
+    height:100px
+}
+
+section.services .service img.hover-border {
+    z-index:-1
+}
+
+section.services .service:hover {
+    box-shadow:-2px 2px 18px 4px #ddd;
+    transition-duration:650ms
+}
+
+section.services .service:hover img.normal-border {
+    z-index:-1
+}
+
+section.services .service:hover img.hover-border {
+    z-index:1
+}
+
+section.services .service:hover .icon {
+    opacity:0;
+    transition-duration:650ms
+}
+
+section.services .service:hover .icon.hover {
+    opacity:1;
+    transition-duration:650ms
+}
+
+section.services .service .icon.hover {
+    opacity:0
+}
+
+section.blog .blog-post .meta-info li {
+    display:inline-block;
+    color:var(--theme-red-color);
+    font-size:14px;
+    padding:0 20px 0 0
+}
+
+section.blog .blog-post h4 {
+    font-size:14px;
+    color:var(--theme-blue-color);
+    margin-bottom:15px;
+    font-weight:700;
+    text-transform:uppercase
+}
+
+section.blog .blog-post {
+    padding:2rem;
+    margin-bottom:2.5rem;
+    background:#fff;
+    box-shadow:6px 2px 12px 4px #ddd
+}
+
+section.blog .blog-post+.blog-post {
+    margin-left:2rem
+}
+
+.py-40 {
+    padding:40px 0
+}
+
+.py-80 {
+    padding:80px 0
+}
+
+.py-100 {
+    padding:80px 0
+}
+
+.text-red {
+    color:var(--theme-red-color)
+}
+
+section .section-heading {
+    font-size:30px;
+    color:var(--theme-blue-color);
+    text-align:center;
+    font-weight:700;
+    margin-bottom:20px;
+    letter-spacing:1.2px
+}
+
+section.bg-image {
+    background-size:cover;
+    background-color:rgba(0,0,0,.2);
+    background-blend-mode:multiply
+}
+
+.btn-red {
+    padding:12px 40px;
+    border-radius:15px;
+    background-color:var(--theme-red-color);
+    border:2px solid var(--theme-red-color);
+    font-size:14px;
+    font-weight:700;
+    color:#fff
+}
+
+.btn-red:hover {
+    background:none;
+    color:var(--theme-red-color);
+    transition-duration:500ms
+}
+
+h4.block-heading {
+    color:var(--theme-blue-color);
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    margin-bottom:15px
+}
+
+a.read-more {
+    padding:10px 0;
+    color:var(--theme-blue-color)!important;
+    text-transform:uppercase;
+    font-size:14px;
+    font-weight:700
+}
+
+footer {
+    background-color:#28252a
+}
+
+footer .social-icons,footer .footer-menu {
+    margin-bottom:2rem
+}
+
+footer .social-icons li {
+    display:inline-block;
+    color:var(--theme-red-color);
+    font-size:22px;
+    padding:0 15px
+}
+
+footer .social-icons li:hover {
+    cursor:pointer;
+    color:#fff
+}
+
+footer .footer-menu li {
+    display:inline-block;
+    text-transform:uppercase
+}
+
+footer .footer-menu li a {
+    color:#fff;
+    padding:10px 20px
+}
+
+footer .copyright,footer .copyright a {
+    color:#fff;
+    margin-bottom:0
+}
+
+@media screen and (max-width: 920px) {
+    section.process li {
+        width:calc(100%/3 - 5px);
+        margin-bottom:40px
+    }
+
+    nav.navbar {
+        justify-content:space-between
+    }
+
+    nav .social-links {
+        display:none
+    }
+
+    nav .navbar-brand {
+        max-width:30%;
+        flex-basis:30%;
+        text-align:left!important
+    }
+
+    nav #navbarHome {
+        max-width:70%;
+        flex-basis:70%
+    }
+
+    .navbar-nav .nav-item {
+        margin-right:8px
+    }
+
+    #blog .d-flex > div > img {
+        width:100%;
+        height:250px;
+        object-fit:cover
+    }
+
+    section.blog .blog-post+.blog-post {
+        margin-left:1.5rem
+    }
+
+    section.blog .blog-post {
+        padding:1rem;
+        margin-bottom:1.5rem
+    }
+
+    section.blog .blog-post .meta-info li {
+        font-size:12px;
+        padding-right:15px
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #navbarHome {
+        max-width:100%
+    }
+
+    #homecarousel .carousel-caption h2 {
+        font-size:18px
+    }
+
+    #homecarousel .carousel-caption p {
+        display:none
+    }
+
+    #homecarousel .carousel-caption a.btn {
+        margin-top:15px
+    }
+
+    #homecarousel .carousel-caption {
+        right:15px;
+        left:15px
+    }
+
+    #homecarousel .carousel-indicators {
+        display:none!important
+    }
+
+    section.intro-cards .single-card {
+        margin:30px 5px
+    }
+
+    section.intro-cards .single-card :first-child {
+        order:2
+    }
+
+    section.intro-cards .single-card :nth-child(2n) {
+        order:1
+    }
+
+    section.intro-cards .desc-block {
+        padding:0 5px;
+        margin-top:20px
+    }
+
+    section.portfolio .isotopes li {
+        font-size:12px;
+        padding:5px 10px
+    }
+
+    section.process li {
+        width:calc(100%/2 - 5px);
+        margin-bottom:30px
+    }
+
+    section.services .service {
+        padding:20px 0;
+        margin:0 20px
+    }
+
+    section.process li .polygon {
+        margin-bottom:10px
+    }
+
+    #reviewsCarousel {
+        max-width:100%
+    }
+
+    section.blog .blog-post+.blog-post {
+        margin-left:0
+    }
+
+    section.blog .blog-post {
+        margin-bottom:1rem
+    }
+
+    section.blog img {
+        width:100%;
+        height:220px;
+        object-fit:cover
+    }
+
+    footer .footer-menu li a {
+        font-size:12px;
+        padding:6px 10px
+    }
+
+    .navbar .social-links {
+        display:block;
+        width:100%;
+        flex:1 1 100%;
+        max-width:100%;
+        text-align:center;
+        position:absolute;
+        top:-40px
+    }
+
+    section.services .service {
+        max-width:100%
+    }
+
+    nav.navbar {
+        padding:20px 0
+    }
+
+    #navbarHome {
+        padding:0;
+        max-width:100%;
+        top:73px;
+        position:absolute;
+        left:0;
+        padding:20px;
+        background-color:#212529
+    }
+
+    #navbarHome li {
+        margin:0;
+        border-radius:0
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .navbar-brand {
+        font-size:1.1rem
+    }
+
+    .navbar-toggler {
+        padding:3px 6px
+    }
+
+    nav.navbar {
+        padding:10px 0
+    }
+
+    #navbarHome {
+        top:57px
+    }
+
+    #homecarousel .carousel-caption {
+        margin-top:20px
+    }
+
+    #homecarousel .carousel-caption h2 {
+        font-size:16px;
+        font-weight:400
+    }
+}
+
+@media screen and (max-width: 325px) {
+    section.process li {
+        width:calc(100%/2 - 5px);
+        margin-bottom:30px
+    }
+
+    #homecarousel .carousel-caption a.btn {
+        display:none
+    }
+}
